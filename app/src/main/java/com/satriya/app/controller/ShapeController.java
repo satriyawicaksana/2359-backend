@@ -31,12 +31,20 @@ public class ShapeController {
     /** BASIC REQUIREMENT
      *  API to list all the shapes, and its requirement sets and so on
      * */
-    //@CrossOrigin(origins = "http://localhost:3000")
     @GetMapping(path = "/shapes", produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.OK)
     public List<Shape> getAllShape(){
         System.out.println("/shapes GET Request");
         return this.shapeService.getAllShape();
+    }
+
+    /** Challenging REQUIREMENT
+     *  API to manage shape categories and Name, Requirement, Area Formula
+     * */
+    @PutMapping(path = "/shapes/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseStatus(HttpStatus.OK)
+    public boolean editShapes(@PathVariable("id")String shapeId, @RequestBody Shape shape){
+        return this.shapeService.editShape(shapeId, shape);
     }
 
     /** ******* REQUIREMENT

@@ -127,4 +127,19 @@ public class ShapeService {
         String json = new ObjectMapper().writeValueAsString(result);
         return json;
     }
+
+    public boolean editShape(String shapeId, Shape shape) {
+        Optional<Shape> s = this.shapeRepository.findById(shapeId);
+        if(s.isPresent()){
+            s.get().setName(shape.getName());
+            s.get().setArea(shape.getArea());
+            s.get().setCategories(shape.getCategories());
+            s.get().setRequirement(shape.getRequirement());
+            this.shapeRepository.save(s.get());
+            return true;
+        }
+        else {
+            return  false;
+        }
+    }
 }
