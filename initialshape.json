@@ -1,0 +1,9 @@
+{ "name": "rectangle", "shapeid": 1, "requirement": [ { "width": 0, "height": 0 } ], "categories": [ 2, 4, 7 ], "area": [ "function(){return this.requirement[0].width * this.requirement[0].height}" ] }
+{ "name": "square", "shapeid": 2, "requirement": [ { "size": 0 } ], "categories": [ 1, 4, 7 ], "area": [ "function(){return this.requirement[0].size * this.requirement[0].size}" ] }
+{ "name": "triangle", "shapeid": 3, "requirement": [ { "base": 0, "height": 0 } ], "categories": [], "area": [ "function(){return (this.requirement[0].base * this.requirement[0].height) / 2}" ] }
+{ "name": "parallelogram", "shapeid": 4, "requirement": [ { "base": 0, "height": 0 } ], "categories": [ 1, 2, 7 ], "area": [ "function(){return this.requirement[0].base * this.requirement[0].height}" ] }
+{ "name": "rhombus", "shapeid": 5, "requirement": [ { "diagonal1": 0, "diagonal2": 0 } ], "categories": [ 6 ], "area": [ "function(){return (this.requirement[0].diagonal1 * this.requirement[0].diagonal2) / 2}" ] }
+{ "name": "kite", "shapeid": 6, "requirement": [ { "diagonal1": 0, "diagonal2": 0 } ], "categories": [ 5 ], "area": [ "function(){return (this.requirement[0].diagonal1 * this.requirement[0].diagonal2) / 2}" ] }
+{ "name": "trapezium", "shapeid": 7, "requirement": [ { "base1": 0, "base2": 0, "height": 0 } ], "categories": [ 1, 2, 4 ], "area": [ "function(){return (this.requirement[0].base1 + this.requirement[0].base2) * height / 2}" ] }
+{ "name": "circle", "shapeid": 8, "requirement": [ { "radius": 0 }, { "diameter": 0 }, { "circumference": 0 } ], "categories": [ 9 ], "area": [ "function(){return Math.PI * this.requirement[0].radius ** 2}", "function(){return (Math.PI / 4) * this.requirement[1].diameter ** 2}", "function(){return this.requirement[2].circumference ** 2 / (4 * Math.PI)}" ] }
+{ "name": "ellipse", "shapeid": 9, "requirement": [ { "radius": 0 } ], "categories": [ 8 ], "area": [ "function(){return Math.PI * this.requirement[0].radius ** 2}" ] }
